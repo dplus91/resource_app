@@ -1,4 +1,14 @@
 ResourceApp::Application.routes.draw do
-  get "pages/home"
+  
+  root to: 'pages#home'
+
+  get "users/new"
+  match '/signup',  to: 'users#new'
+
+  get "users/show"
+
+  get "users/create"
+
+  
 
 end
