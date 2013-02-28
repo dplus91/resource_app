@@ -5,9 +5,9 @@ ResourceApp::Application.routes.draw do
   resources :users
   match '/signup',  to: 'users#new'
 
-  get "users/show"
-
-  get "users/create"
+  resources :sessions, only: [:new, :create, :destroy]
+  match '/signin',  to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
 
   
 
